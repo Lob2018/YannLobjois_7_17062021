@@ -1,0 +1,41 @@
+{
+    "name": "yannlobjois_7_17062021",
+    "version": "1.0.0",
+    "description": "[Lien GitHub Pages](https://lob2018.github.io/YannLobjois_7_17062021/)",
+    "main": "index.html",
+    "devDependencies": {
+        "@babel/core": "^7.14.6",
+        "@babel/preset-env": "^7.14.5",
+        "autoprefixer": "^10.2.6",
+        "babel-loader": "^8.2.2",
+        "babel-polyfill": "^6.26.0",
+        "css-loader": "^5.2.6",
+        "eslint": "^7.28.0",
+        "html-webpack-plugin": "^5.3.1",
+        "jsdoc": "^3.6.7",
+        "postcss-loader": "^6.1.0",
+        "sass": "^1.35.1",
+        "sass-loader": "^12.1.0",
+        "style-loader": "^2.0.0",
+        "webpack": "^5.39.1",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "eslint": "./node_modules/.bin/eslint --init",
+        "build": "webpack",
+        "start": "webpack serve",
+        "doc": "jsdoc -c jsdoc.conf.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Lob2018/YannLobjois_7_17062021.git"
+    },
+    "author": "Lob2018",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Lob2018/YannLobjois_7_17062021/issues"
+    },
+    "homepage": "https://github.com/Lob2018/YannLobjois_7_17062021#readme"
+}

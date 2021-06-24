@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="./public/logo.svg">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- WebPack + Bootstrap CSS -->
+    <script defer src="polyfill.bundle.js"></script>
+    <script defer src="app.bundle.js"></script>
+    <title>Les petits plats</title>
+</head>
+
+<body class="container">
+    <header class="row">
+        <img class="logo col-md-12" src="./public/logo.svg" alt="Les petits plats">
+        <h1 class="col-md-12">Les petits plats</h1>
+        <nav class="navbar col-md-12">
+            <form class="form-inline col-md-12">
+                <input class="form-control recherche col-md-12" type="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
+                <span class="icon--rechercher col-md-1" role="presentation"></span>
+            </form>
+
+            <div class="col-md-6 p-0">
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ingrédients
+                </button>
+                    <div class="dropdown-menu dropdown-menu--primary" aria-labelledby="dropdownMenuButtonBlue">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonGreen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Appareil
+                </button>
+                    <div class="dropdown-menu dropdown-menu--secondary" aria-labelledby="dropdownMenuButtonGreen">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButtonRed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ustensiles
+                </button>
+                    <div class="dropdown-menu dropdown-menu--info" aria-labelledby="dropdownMenuButtonRed">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+    <main class="row"></main>
+    <footer></footer>
+</body>
+
+</html>
