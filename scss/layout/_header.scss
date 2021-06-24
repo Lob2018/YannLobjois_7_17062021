@@ -1,0 +1,12 @@
+header {
+    margin: 0;
+    padding: 42px 100px 0px 100px;
+    @include mobile {
+        padding: 21px;
+    }
+    & .navbar,
+    & .form-inline {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
