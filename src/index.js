@@ -1,6 +1,8 @@
  // Import SASS for WebPack
  import "../scss/style.scss";
  import recipes from "../data/recipes.js";
+ // Add listeners to filter placeholders
+ import "./view/filterPlaceholders";
 
  function isInTheReceipe(array, oldWord) {
      const word = oldWord.toLowerCase().trim();
