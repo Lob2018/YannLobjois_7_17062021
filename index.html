@@ -26,46 +26,66 @@
         <h1 class="col-md-12">Les petits plats</h1>
         <nav class="navbar col-md-12">
             <form class="form-inline col-md-12">
-                <input class="form-control recherche col-md-12" type="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
-                <span class="icon--rechercher col-md-1" role="presentation"></span>
+                <div class="form-inline col-md-12">
+                    <input class="form-control recherche col-sm-12 col-md-12" type="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
+                    <span class="icon--rechercher col-md-1" role="presentation"></span>
+                </div>
+                <div class="p-0 filtres">
+                    <div class="btn-group" id="filtre1">
+                        <input class="form-control__filtre filtre--ingredients dropdown-toggle" type="search" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Ingrédients" aria-label="Search">
+                        <span class="icon--chevron icon--chevron-down" role="presentation"></span>
+                        <div class="dropdown-menu dropdown-menu--primary" aria-labelledby="dropdownMenuButtonBlue">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+
+                        </div>
+                    </div>
+                    <div class="btn-group" id="filtre2">
+                        <input class="form-control__filtre filtre--appareils dropdown-toggle" type="search" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Appareils" aria-label="Search">
+                        <span class="icon--chevron icon--chevron-down" role="presentation"></span>
+                        <div class="dropdown-menu dropdown-menu--secondary" aria-labelledby="dropdownMenuButtonGreen">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <div class="btn-group" id="filtre3">
+                        <input class="form-control__filtre filtre--ustensiles dropdown-toggle" type="search" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Ustensiles" aria-label="Search">
+                        <span class="icon--chevron icon--chevron-down" role="presentation"></span>
+                        <div class="dropdown-menu dropdown-menu--info" aria-labelledby="dropdownMenuButtonRed">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
             </form>
-
-            <div class="col-md-6 p-0">
-                <div class="btn-group">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ingrédients
-                </button>
-                    <div class="dropdown-menu dropdown-menu--primary" aria-labelledby="dropdownMenuButtonBlue">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
-
-                <div class="btn-group">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonGreen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Appareil
-                </button>
-                    <div class="dropdown-menu dropdown-menu--secondary" aria-labelledby="dropdownMenuButtonGreen">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
-
-                <div class="btn-group">
-                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButtonRed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Ustensiles
-                </button>
-                    <div class="dropdown-menu dropdown-menu--info" aria-labelledby="dropdownMenuButtonRed">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
-            </div>
-
-
         </nav>
     </header>
     <main class="row"></main>
