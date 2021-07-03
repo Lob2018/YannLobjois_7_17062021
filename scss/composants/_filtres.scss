@@ -80,6 +80,11 @@ input:-webkit-autofill:active {
     background-position: center;
 }
 
+.icon--chevron-down:focus {
+    border-radius: 0 5px 5px 0;
+    background-color: rgba($color: #000000, $alpha: .3);
+}
+
 .icon--chevron-up {
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z' fill='white'/%3E%3C/svg%3E%0A");
     background-size: 16px map-get($size, logoFiltreChevronHeight);
