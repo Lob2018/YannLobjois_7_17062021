@@ -14,9 +14,6 @@
     <script defer src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- WebPack + Bootstrap CSS -->
-    <script defer src="polyfill.bundle.js"></script>
-    <script defer src="app.bundle.js"></script>
     <title>Les petits plats</title>
 </head>
 
@@ -35,7 +32,7 @@
                         <div class="cb-group" id="filtre1">
                             <label class="sr-only" for="cb-ingredients__input">Ingrédients</label>
                             <input id="cb-ingredients__input" placeholder="Ingrédients" class="cb_edit filtre--ingredients" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb-ingredients__listbox" aria-autocomplete="list">
-                            <button class="icon--chevron icon--chevron-down" aria-label="Toogle ingrédients"></button>
+                            <span class="icon--chevron icon--chevron-down" aria-label="Toogle ingrédients" role="button" tabindex="0"></span>
                             <ul id="cb-ingredients__listbox" class="dropdown-menu dropdown-menu--primary" role="listbox" aria-label="Ingrédients">
                                 <li id="lb1-al" role="option">Alabama</li>
                                 <li id="lb1-ak" role="option">Alaska</li>
@@ -74,7 +71,7 @@
                         <div class="cb-group" id="filtre2">
                             <label class="sr-only" for="cb-appareils__input">Appareils</label>
                             <input id="cb-appareils__input" placeholder="Appareils" class="cb_edit filtre--appareils" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb-appareils__listbox" aria-autocomplete="list">
-                            <button class="icon--chevron icon--chevron-down" aria-label="Toogle appareils"></button>
+                            <span class="icon--chevron icon--chevron-down" aria-label="Toogle appareils" role="button" tabindex="0"></span>
                             <ul id="cb-appareils__listbox" class="dropdown-menu dropdown-menu--secondary" role="listbox" aria-label="Appareils">
                                 <li id="lb2-nv" role="option">Nevada</li>
                                 <li id="lb2-nh" role="option">New Hampshire</li>
@@ -86,7 +83,7 @@
                         <div class="cb-group" id="filtre3">
                             <label class="sr-only" for="cb-ustensiles__input">Ustensiles</label>
                             <input id="cb-ustensiles__input" placeholder="Ustensiles" class="cb_edit filtre--ustensiles" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb-ustensiles__listbox" aria-autocomplete="list">
-                            <button class="icon--chevron icon--chevron-down" aria-label="Toogle ustensiles"></button>
+                            <span class="icon--chevron icon--chevron-down" aria-label="Toogle ustensiles" role="button" tabindex="0"></span>
                             <ul id="cb-ustensiles__listbox" class="dropdown-menu dropdown-menu--info" role="listbox" aria-label="Ustensiles">
                                 <li id="lb3-nm" role="option">New Mexico</li>
                                 <li id="lb3-ny" role="option">New York</li>
@@ -100,6 +97,9 @@
     </header>
     <main class="row"></main>
     <footer></footer>
+    <!-- WebPack + Bootstrap CSS -->
+    <script src="polyfill.bundle.js"></script>
+    <script src="app.bundle.js"></script>
 </body>
 
 </html>
