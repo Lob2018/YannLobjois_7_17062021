@@ -63,6 +63,7 @@ export default class ComboBox {
         }
         this.domNode.addEventListener('keydown', this.handleKeydown.bind(this));
         this.domNode.addEventListener('keyup', this.handleKeyup.bind(this));
+        this.domNode.addEventListener('touchend', this.handleKeyup.bind(this));
         this.domNode.addEventListener('click', this.handleClick.bind(this));
         this.domNode.addEventListener('focus', this.handleFocus.bind(this));
         this.domNode.addEventListener('blur', this.handleBlur.bind(this));
