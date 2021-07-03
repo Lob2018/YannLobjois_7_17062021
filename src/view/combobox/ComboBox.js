@@ -74,8 +74,9 @@ export default class ComboBox {
         }
         // Open Button
         const button = this.domNode.nextElementSibling;
-        if (button && button.tagName === 'BUTTON') {
+        if (button && button.tagName === 'SPAN') {
             button.addEventListener('click', this.handleButtonClick.bind(this));
+            button.addEventListener('keyup', this.handleButtonKeyUp.bind(this));
         }
     };
 
@@ -258,7 +259,7 @@ export default class ComboBox {
     };
 
     /**
-     * Keydup event
+     * Keyup event
      * @function
      * @memberof ComboBox 
      * @param {object} event - The event of the keyup 
@@ -433,6 +434,30 @@ export default class ComboBox {
             this.toogleFilters();
         }
     };
+
+    /**
+     * Button keyup event
+     * @function
+     * @memberof ComboBox 
+     * @param {object} event - The event of the button keyup 
+     */
+    handleButtonKeyUp(event) {
+        if (event.keyCode === this.keyCode.RETURN) {
+            if (this.listbox.isOpen()) {
+                this.setValue('');
+                this.listbox.close(true);
+            } else {
+                this.filter = '';
+                this.setValue('');
+                this.toogleFilters();
+            }
+        }
+    };
+
+
+
+
+
 
     /**
      * Toogle event
