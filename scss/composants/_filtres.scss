@@ -1,52 +1,19 @@
-// .dropdown-toggle::after {
-//     border: none;
-//     width: 0.94em;
-//     height: map-get($size, logoFiltreChevronHeight);
-//     background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z' fill='white'/%3E%3C/svg%3E%0A");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     vertical-align: 0;
-//     margin-left: 31px;
-// }
-.icon--chevron {
-    position: absolute;
-    right: 0;
-    height: map-get($size, rechHeight);
-    width: 2.6em;
-    border: 0;
-    padding: 0;
+/* Change Autocomplete styles in Chrome*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
 }
 
-.icon--chevron-down {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z' fill='white'/%3E%3C/svg%3E%0A");
-    background-size: 16px map-get($size, logoFiltreChevronHeight);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.icon--chevron-up {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z' fill='white'/%3E%3C/svg%3E%0A");
-    background-size: 16px map-get($size, logoFiltreChevronHeight);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-input {
-    text-overflow: ellipsis;
-}
-
-.filtres {
-    display: flex;
-    gap: 1.12em;
-    flex-wrap: wrap;
-    margin-top: 1.12em;
-}
-
-.btn-group,
-.btn-group-vertical {
+.cb-group {
     display: flex;
     flex-direction: column;
-    max-width: 54%;
+    position: relative;
+    vertical-align: middle;
+    // max-width: 54%;
     @include mobile {
         max-width: none;
         flex: 0 0 100%;
@@ -68,24 +35,6 @@ input {
     gap: 0 .6rem;
 }
 
-.dropdown-menu--primary,
-.dropdown-menu--secondary,
-.dropdown-menu--info {
-    & a {
-        color: #fff;
-        font-family: 'Lato', sans-serif;
-        font-weight: 400;
-        padding: .25rem .75rem;
-        width: auto;
-        flex: 1 0 33%;
-        max-width: 12em;
-        min-width: 12em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-}
-
 .dropdown-menu--primary {
     background-color: map-get($couleurs, coulFiltre1);
 }
@@ -98,24 +47,48 @@ input {
     background-color: map-get($couleurs, coulFiltre3);
 }
 
-.form-control__filtre,
-.form-control__filtre:focus {
-    height: 69px;
-    width: 12em;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    background-clip: padding-box;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
+.filtres {
+    display: flex;
+    gap: 1.12em;
+    flex-wrap: wrap;
+    margin-top: 1.12em;
+}
+
+button:focus {
     outline: none;
-    padding-right: 3em;
-    @include mobile {
-        width: 100%;
-    }
+}
+
+.icon--chevron {
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+    height: map-get($size, rechHeight);
+    width: 2.6em;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icon--chevron:active {
+    border: none;
+}
+
+.icon--chevron-down {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.12 0.453369L8 6.56004L1.88 0.453369L0 2.33337L8 10.3334L16 2.33337L14.12 0.453369Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: 16px map-get($size, logoFiltreChevronHeight);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon--chevron-up {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='11' viewBox='0 0 16 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: 16px map-get($size, logoFiltreChevronHeight);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input {
+    text-overflow: ellipsis;
 }
 
 .filtre--ingredients,
@@ -146,13 +119,108 @@ input {
     opacity: 0.5;
 }
 
+.combobox-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 54%;
+    @include mobile {
+        max-width: none;
+        flex: 0 0 100%;
+    }
+}
 
-/* Change Autocomplete styles in Chrome*/
+.combobox {
+    display: inline-flex;
+}
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
-    -webkit-text-fill-color: #fff !important;
+.combobox button {
+    right: 0;
+    height: map-get($size, rechHeight);
+    width: 2.6em;
+    border: 0;
+    padding: 0;
+}
+
+.combobox input,
+.combobox input.focus {
+    height: 69px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    padding-right: 3em;
+}
+
+.combobox input[aria-expanded="true"] {
+    width: 100%;
+}
+
+.combobox input[aria-expanded="false"] {
+    width: 12em;
+    @include mobile {
+        width: 100%;
+    }
+}
+
+ul[role="listbox"] {
+    display: none;
+    flex-wrap: wrap;
+    margin-top: -5px;
+    top: 0;
+    position: relative;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    gap: 0 .6rem;
+}
+
+ul[role="listbox"] li[role="option"] {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding: .25rem .75rem;
+    width: auto;
+    flex: 1 0 33%;
+    max-width: 12em;
+    min-width: 12em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* focus and hover styling */
+
+@media (forced-colors: active),
+(-ms-high-contrast: active) {
+    [role="listbox"].focus [role="option"][aria-selected="true"] {
+        -ms-high-contrast-adjust: none;
+        /* disable the backgrounds that Edge puts behind text */
+        background-color: highlight;
+        color: highlighttext;
+        border-color: currentcolor;
+    }
+}
+
+#cb-ingredients__listbox li[role="option"]:hover,
+#cb-ingredients__listbox.focus [role="option"][aria-selected="true"] {
+    background-color: darken( map-get($couleurs, coulFiltre1), 30%);
+    cursor: pointer;
+}
+
+#cb-appareils__listbox li[role="option"]:hover,
+#cb-appareils__listbox.focus [role="option"][aria-selected="true"] {
+    background-color: darken( map-get($couleurs, coulFiltre2), 30%);
+    cursor: pointer;
+}
+
+#cb-ustensiles__listbox li[role="option"]:hover,
+#cb-ustensiles__listbox.focus [role="option"][aria-selected="true"] {
+    background-color: darken( map-get($couleurs, coulFiltre3), 30%);
+    cursor: pointer;
 }

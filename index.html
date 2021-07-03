@@ -25,63 +25,73 @@
         <img class="logo col-md-12" src="./public/logo.svg" alt="Les petits plats">
         <h1 class="col-md-12">Les petits plats</h1>
         <nav class="navbar col-md-12">
-            <form class="form-inline col-md-12">
+            <form class="form-inline col-md-12" role="search">
                 <div class="form-inline col-md-12">
                     <input class="form-control recherche col-sm-12 col-md-12" type="search" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" aria-label="Search">
                     <span class="icon--rechercher col-md-1" role="presentation"></span>
                 </div>
                 <div class="p-0 filtres">
-                    <div class="btn-group" id="filtre1">
-                        <input class="form-control__filtre filtre--ingredients dropdown-toggle" type="search" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Ingrédients" aria-label="Search">
-                        <span class="icon--chevron icon--chevron-down" role="presentation"></span>
-                        <div class="dropdown-menu dropdown-menu--primary" aria-labelledby="dropdownMenuButtonBlue">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a> <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-
+                    <div class="combobox combobox-list">
+                        <div class="cb-group" id="filtre1">
+                            <label class="sr-only" for="cb-ingredients__input">Ingrédients</label>
+                            <input id="cb-ingredients__input" placeholder="Ingrédients" class="cb_edit filtre--ingredients" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb-ingredients__listbox" aria-autocomplete="list">
+                            <button class="icon--chevron icon--chevron-down" aria-label="Toogle ingrédients"></button>
+                            <ul id="cb-ingredients__listbox" class="dropdown-menu dropdown-menu--primary" role="listbox" aria-label="Ingrédients">
+                                <li id="lb1-al" role="option">Alabama</li>
+                                <li id="lb1-ak" role="option">Alaska</li>
+                                <li id="lb1-as" role="option">American Samoa</li>
+                                <li id="lb1-az" role="option">Arizona</li>
+                                <li id="lb1-ar" role="option">Arkansas</li>
+                                <li id="lb1-ca" role="option">California</li>
+                                <li id="lb1-co" role="option">Colorado</li>
+                                <li id="lb1-ct" role="option">Connecticut</li>
+                                <li id="lb1-de" role="option">Delaware</li>
+                                <li id="lb1-dc" role="option">District of Columbia</li>
+                                <li id="lb1-fl" role="option">Florida</li>
+                                <li id="lb1-ga" role="option">Georgia</li>
+                                <li id="lb1-gm" role="option">Guam</li>
+                                <li id="lb1-hi" role="option">Hawaii</li>
+                                <li id="lb1-id" role="option">Idaho</li>
+                                <li id="lb1-il" role="option">Illinois</li>
+                                <li id="lb1-in" role="option">Indiana</li>
+                                <li id="lb1-ia" role="option">Iowa</li>
+                                <li id="lb1-ks" role="option">Kansas</li>
+                                <li id="lb1-ky" role="option">Kentucky</li>
+                                <li id="lb1-la" role="option">Louisiana</li>
+                                <li id="lb1-me" role="option">Maine</li>
+                                <li id="lb1-md" role="option">Maryland</li>
+                                <li id="lb1-ma" role="option">Massachusetts</li>
+                                <li id="lb1-mi" role="option">Michigan</li>
+                                <li id="lb1-mn" role="option">Minnesota</li>
+                                <li id="lb1-ms" role="option">Mississippi</li>
+                                <li id="lb1-mo" role="option">Missouri</li>
+                                <li id="lb1-mt" role="option">Montana</li>
+                                <li id="lb1-ne" role="option">Nebraska</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="btn-group" id="filtre2">
-                        <input class="form-control__filtre filtre--appareils dropdown-toggle" type="search" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Appareils" aria-label="Search">
-                        <span class="icon--chevron icon--chevron-down" role="presentation"></span>
-                        <div class="dropdown-menu dropdown-menu--secondary" aria-labelledby="dropdownMenuButtonGreen">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="combobox combobox-list">
+                        <div class="cb-group" id="filtre2">
+                            <label class="sr-only" for="cb-appareils__input">Appareils</label>
+                            <input id="cb-appareils__input" placeholder="Appareils" class="cb_edit filtre--appareils" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb-appareils__listbox" aria-autocomplete="list">
+                            <button class="icon--chevron icon--chevron-down" aria-label="Toogle appareils"></button>
+                            <ul id="cb-appareils__listbox" class="dropdown-menu dropdown-menu--secondary" role="listbox" aria-label="Appareils">
+                                <li id="lb2-nv" role="option">Nevada</li>
+                                <li id="lb2-nh" role="option">New Hampshire</li>
+                                <li id="lb2-nj" role="option">New Jersey</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="btn-group" id="filtre3">
-                        <input class="form-control__filtre filtre--ustensiles dropdown-toggle" type="search" id="dropdownMenuButtonBlue" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Ustensiles" aria-label="Search">
-                        <span class="icon--chevron icon--chevron-down" role="presentation"></span>
-                        <div class="dropdown-menu dropdown-menu--info" aria-labelledby="dropdownMenuButtonRed">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="combobox combobox-list">
+                        <div class="cb-group" id="filtre3">
+                            <label class="sr-only" for="cb-ustensiles__input">Ustensiles</label>
+                            <input id="cb-ustensiles__input" placeholder="Ustensiles" class="cb_edit filtre--ustensiles" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="cb-ustensiles__listbox" aria-autocomplete="list">
+                            <button class="icon--chevron icon--chevron-down" aria-label="Toogle ustensiles"></button>
+                            <ul id="cb-ustensiles__listbox" class="dropdown-menu dropdown-menu--info" role="listbox" aria-label="Ustensiles">
+                                <li id="lb3-nm" role="option">New Mexico</li>
+                                <li id="lb3-ny" role="option">New York</li>
+                                <li id="lb3-nc" role="option">North Carolina</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

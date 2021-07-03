@@ -1,8 +1,13 @@
  // Import SASS for WebPack
  import "../scss/style.scss";
  import recipes from "../data/recipes.js";
- // Add listeners to filter placeholders
- import "./view/filterPlaceholders";
+ import ComboBox from './view/combobox/ComboBox.js';
+
+
+ // Instanciate the comboboxes filters
+ const comboBox = new ComboBox();
+
+
 
  function isInTheReceipe(array, oldWord) {
      const word = oldWord.toLowerCase().trim();
