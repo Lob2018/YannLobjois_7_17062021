@@ -70,6 +70,9 @@ export default class Tags {
         // Create button element
         const tagLink = document.createElement("BUTTON");
         tagLink.setAttribute("role", "menuitem");
+        tagLink.setAttribute("name", ("RetireMotCle" + tag.replace(/\s/g, "")));
+        tagLink.setAttribute("aria-label", "Retirer le mot-clé " + tag);
+
         tagLink.tabIndex = 0;
         tagLink.innerHTML = tag;
 
@@ -101,16 +104,14 @@ export default class Tags {
         element.addEventListener('click', (event) => {
             this.removeTagInSet(type, value);
             element.parentElement.remove();
-            event.stopPropagation();
-            event.preventDefault();
+            return false;
         });
         // Remove on keyup
         element.addEventListener("keyup", function(event) {
             if (event.key === 'Enter') {
                 this.removeTagInSet(type, value);
                 element.parentElement.remove();
-                event.stopPropagation();
-                event.preventDefault();
+                return false;
             }
         });
     }
