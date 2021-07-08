@@ -1,0 +1,114 @@
+.recipe-nav {
+    width: 100%;
+    .recipe-container {
+        padding: 42px 100px 0px 100px;
+        @include mobile {
+            padding: 0 21px 21px 21px;
+            gap: 30px;
+        }
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        li {
+            flex: 1 0 30%;
+            min-width: 380px;
+            max-width: 600px;
+            @include mobile {
+                min-width: 100%;
+                max-width: 100%;
+            }
+            a {
+                article {
+                    img {
+                        width: 100%;
+                        height: map-get($size, cardImageHeight);
+                        @include mobile {
+                            height: map-get($size, cardImageHeightMob);
+                        }
+                        object-position: center;
+                        object-fit: cover;
+                        border-radius: 5px 5px 0px 0px;
+                    }
+                    section {
+                        width: 100%;
+                        height: map-get($size, cardImageHeight);
+                        @include mobile {
+                            height: map-get($size, cardTxtHeightMob);
+                            padding: 15px;
+                        }
+                        background-color: map-get($couleurs, coulCardFondTxt);
+                        border-radius: 0 0 5px 5px;
+                        padding: 20px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        header {
+                            display: flex;
+                            flex: 1 0 100%;
+                            width: 100%;
+                            h2 {
+                                font-size: 1rem;
+                                flex: 1 0 70%;
+                                padding-right: 1em;
+                            }
+                            .recipe__time {
+                                flex: 1 0 30%;
+                                display: contents;
+                                font-family: 'Lato', sans-serif;
+                                font-weight: 700;
+                                text-align: right;
+                                line-height: 21.6px;
+                                height: 22px;
+                                margin: 0 0 20px 0;
+                                .icon--time::after {
+                                    position: relative;
+                                    content: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0C4.5 0 0 4.5 0 10C0 15.5 4.5 20 10 20C15.5 20 20 15.5 20 10C20 4.5 15.5 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM10.5 5H9V11L14.2 14.2L15 12.9L10.5 10.2V5Z' fill='black'/%3E%3C/svg%3E%0A");
+                                    pointer-events: none;
+                                    left: -0.3em;
+                                }
+                            }
+                            h2,
+                            .text--time {
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                line-height: 21.6px;
+                                height: 22px;
+                            }
+                        }
+                        .text-ingredients {
+                            b,
+                            br {
+                                font-size: map-get($size, cardText);
+                                line-height: 14.4px;
+                            }
+                            flex: 1 0 50%;
+                            font-size: map-get($size,
+                            cardText);
+                            padding-right: 2em;
+                        }
+                        .text-description {
+                            flex: 1 0 50%;
+                            font-size: map-get($size, cardText);
+                        }
+                        .text-ingredients,
+                        .text-description {
+                            margin: 0;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 8;
+                            @include mobile {
+                                -webkit-line-clamp: 5;
+                            }
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            line-height: 14.4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
