@@ -61,4 +61,8 @@ export default class Recipes {
         li.appendChild(a);
         this.ul.appendChild(li);
     }
+
+    clear() {
+        this.ul.innerHTML = '';
+    }
 }
