@@ -15,6 +15,7 @@ export default class AllRecipes {
             return AllRecipes.instance;
         }
         AllRecipes.instance = this;
+        this.noResultsMessage = document.getElementsByClassName('no-results')[0];
         this.recipes = new Recipes();
         this.recipesArray = [];
         let i = 0;
@@ -36,6 +37,8 @@ export default class AllRecipes {
     }
 
     prepareRecipes(returndRecipesArray) {
+        this.noResultsMessage.style.display = 'none';
+        this.recipes.clear();
         // Instanciate with all the recipes
         if (returndRecipesArray === undefined) {
             let i = 0;
@@ -43,10 +46,15 @@ export default class AllRecipes {
                 this.recipes.displayRecipe(this.recipesArray[i])
                 i++;
             }
-
             return;
+        } else if (returndRecipesArray.length == 0) {
+            this.noResultsMessage.style.display = 'flex';
+        } else {
+            let i = 0;
+            while (returndRecipesArray[i]) {
+                this.recipes.displayRecipe(returndRecipesArray[i])
+                i++;
+            }
         }
-
     }
-
 }
