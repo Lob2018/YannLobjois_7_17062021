@@ -14,6 +14,12 @@
     color: black;
 }
 
+.recherche:focus {
+    outline: none;
+    background-color: map-get($couleurs, coulFondRecherche);
+    box-shadow: none;
+}
+
 .icon--rechercher {
     position: absolute;
     right: 0;
@@ -25,4 +31,15 @@
     background-position: center;
     border: 0;
     padding: 0;
+}
+
+.no-results {
+    // display: flex;
+    display: none;
+    flex-direction: column;
+    flex: 1 0 100%;
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    padding: 0.5rem 0;
 }

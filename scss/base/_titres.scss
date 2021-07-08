@@ -3,6 +3,9 @@ h1 {
     font-weight: 700;
     text-align: center;
     color: map-get($couleurs, coulPrimaire);
+    @include mobile {
+        font-size: 2rem;
+    }
 }
 
 h2 {
