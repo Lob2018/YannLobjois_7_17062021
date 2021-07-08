@@ -39,7 +39,9 @@ export default class Recipes {
         let i = 0;
         while (recipe.ingredients[i]) {
             const obj = recipe.ingredients[i];
-            ingredients += '<b>' + obj.ingredient + ' </b>' + obj.quantity + ' ' + obj.unit + '<br>';
+            const quantity = obj.quantity === undefined ? '' : (obj.quantity);
+            const unit = obj.unit === undefined ? '' : (' ' + obj.unit);
+            ingredients += '<b>' + obj.ingredient + ' </b>' + quantity + unit + '<br>';
             i++;
         }
         p2.innerHTML = ingredients;
