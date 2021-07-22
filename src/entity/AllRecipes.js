@@ -1,6 +1,6 @@
 import Recipe from "./Recipe.js";
 import Recipes from "../view/Recipes.js";
-import recipes from "../../data/recipes.js";
+import recipes from "../../data/recipes50.js";
 
 
 export default class AllRecipes {
