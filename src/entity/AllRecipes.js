@@ -1,6 +1,6 @@
 import Recipe from "./Recipe.js";
 import Recipes from "../view/Recipes.js";
-import recipes from "../../data/recipes50.js";
+import recipes from "../../data/recipes5000.js";
 
 
 export default class AllRecipes {
@@ -29,12 +29,45 @@ export default class AllRecipes {
     filteredRecipes(oldWord) {
         const word = oldWord.toLowerCase().trim();
         this.prepareRecipes(
-            this.recipesArray.filter(function(currentElement) {
-                return (currentElement.name.toLowerCase().includes(word) ||
-                    currentElement.description.toLowerCase().includes(word) ||
-                    currentElement.ingredients.findIndex(item => word === item.toString().toLowerCase()) != -1);
-            }));
+
+            this.recipesArray.filter(recette => {
+                const sentence = (recette.name + recette.description +
+                    recette.ingredients.map(function(ingredient) {
+                        return ingredient.ingredient + ingredient.unit
+                    })).toLowerCase();
+                // Dichotomy on sentence
+                const wordsArray = [];
+                const firstChar = word[0];
+                let index;
+                let startIndex = 0;
+                while ((index = sentence.indexOf(firstChar, startIndex)) > -1) {
+                    wordsArray.push(sentence.substring(index, index + word.length));
+                    startIndex = index + 1;
+                }
+                if (this.sentenceDichotomy(wordsArray.sort(), word, 0, wordsArray.length)) {
+                    return recette;
+                }
+            })
+
+        );
     }
+
+    sentenceDichotomy(wordsArray, word, start, end) {
+        if (start > end) {
+            return false
+        }
+        let middle = Math.floor((start + end) / 2);
+        if (wordsArray[middle] == word) {
+            return true;
+        }
+        if (word < wordsArray[middle]) {
+            return this.sentenceDichotomy(wordsArray, word, start, middle - 1)
+        } else {
+            return this.sentenceDichotomy(wordsArray, word, middle + 1, end)
+        }
+    }
+
+
 
     prepareRecipes(returndRecipesArray) {
         this.noResultsMessage.style.display = 'none';
