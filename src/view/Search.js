@@ -25,7 +25,10 @@ export default class Search {
      */
     handleKeyup(event) {
         if (this.search.value.length >= 3) {
+            const t0 = performance.now();
             this.allRecipes.filteredRecipes(this.search.value);
+            const t1 = performance.now();
+            console.log("La méthode filteredRecipes('" + this.search.value + "'), avec l'algorithme #1, a demandé " + (t1 - t0) + " ms")
         } else {
             this.allRecipes.prepareRecipes();
         }
