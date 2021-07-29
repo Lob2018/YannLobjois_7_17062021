@@ -13,6 +13,6 @@ export default class Recipe {
         this.time = recipe.time;
         this.description = recipe.description;
         this.appliance = recipe.appliance;
-        this.ustensiles = recipe.ustensiles;
+        this.ustensils = recipe.ustensils;
     }
 }

@@ -14,6 +14,9 @@ export default class Recipes {
     }
 
     displayRecipe(recipe) {
+
+        // FILTRER AVEC TAGS PRESENTS ICI
+
         const li = document.createElement('LI');
         li.classList.add("recipe");
         const a = document.createElement('A');
