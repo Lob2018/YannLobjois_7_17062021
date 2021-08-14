@@ -287,5 +287,14 @@ export default class ListBox {
         }
     }
 
+    /**
+     * Clear the combobox value
+     * @function
+     * @memberof ListBox 
+     */
+    clearComboBoxValue() {
+        this.combobox.setValue('');
+    }
+
 
 }

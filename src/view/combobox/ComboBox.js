@@ -190,6 +190,7 @@ export default class ComboBox {
         const altKey = event.altKey;
         switch (event.keyCode) {
             case this.keyCode.RETURN:
+                this.setValue('');
                 // Set the selected tag
                 this.tags.setTag(this.listbox.domNode.id, this.option.textContent);
                 if ((this.listbox.hasFocus || this.isBoth) && this.option) {
@@ -200,7 +201,7 @@ export default class ComboBox {
                 this.toogleFilters();
                 this.removeVisualFocusAll();
                 this.filter = '';
-                this.setValue('');
+                // this.setValue('');
                 this.domNode.blur();
                 break;
             case this.keyCode.DOWN:
@@ -314,7 +315,6 @@ export default class ComboBox {
                             if (this.listbox.isClosed() && this.domNode.value.length) {
                                 this.listbox.open();
                             }
-
                             if (option.textComparison.indexOf(this.domNode.value.toLowerCase()) === 0) {
                                 this.option = option;
                                 if (this.isBoth || this.listbox.hasFocus) {

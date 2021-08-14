@@ -35,6 +35,8 @@ export default class ListBoxOption {
      * @memberof ListBoxOption 
      */
     handleClick() {
+        // Clear the combobox value to get all the tags in the list
+        this.listbox.clearComboBoxValue();
         // Set the selected tag
         this.tags.setTag(this.domNode.parentElement.id, this.textContent);
         this.listbox.setOption(this);
