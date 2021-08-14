@@ -89,6 +89,8 @@ export default class AllRecipes {
             //// FILTER BY TAGS
             returnedRecipesArray = this.recipesResultFilteredByTags(returnedRecipesArray)
             let i = 0;
+            // if empty show the message
+            if (returnedRecipesArray.length == 0) this.noResultsMessage.style.display = 'flex';
             while (returnedRecipesArray[i]) {
                 let recipe = returnedRecipesArray[i];
                 this.displayTheRecipe(recipe)
