@@ -1,3 +1,5 @@
+import AllRecipes from "../entity/AllRecipes.js";
+
 export default class Tags {
     static instance;
     /**
@@ -19,6 +21,8 @@ export default class Tags {
         this.ustensilesListTagsSet = new Set();
         // Initialize boolean
         this.initialized = false;
+        // Update the recipes results
+        this.allRecipes = new AllRecipes();
     }
 
     /**
@@ -50,16 +54,14 @@ export default class Tags {
                 }
                 break;
         };
-        // FILTRER LES RECETTES AVEC TOUS LES TAGS
-
     }
 
     /**
-     * Display the tag
+     * Display the tag & update the recipes
      * @function
      * @memberof Tags 
-     * @param {*} type - The type of tag to add (0=ingredients, 1=appareils, 2=ustensiles)
-     * @param {*} tag - The tag's text
+     * @param {number} type - The type of tag to add (0=ingredients, 1=appareils, 2=ustensiles)
+     * @param {string} tag - The tag's text
      */
     displayTags(type, tag) {
         // UL tags container
@@ -105,11 +107,17 @@ export default class Tags {
         }
         // Update HTML content
         tagsContainer.appendChild(tagList);
+
+        // Update the recipes
+        const word = document.getElementsByClassName('recherche')[0].value;
+        this.allRecipes.filteredRecipes(word);
     }
 
 
     /**
      * The tag removal listener
+     * @function
+     * @memberof Tags 
      * @param {object} element - The HTML element listened
      * @param {number} type - The tag type (0 ingredient, 1 appliance, 2 ustensil)
      * @param {string} value - The tag's value
@@ -129,12 +137,10 @@ export default class Tags {
                 return false;
             }
         });
-        // FILTRER LES RECETTES AVEC TOUS LES TAGS
-
     }
 
     /**
-     * Remove the tag form the corresponding Set
+     * Remove the tag form the corresponding Set & update the recipes
      * @function
      * @memberof Tags 
      * @param {number} type - The tag's type
@@ -155,6 +161,9 @@ export default class Tags {
                 this.removeTagsContainer();
                 break;
         }
+        // Update the recipes
+        const word = document.getElementsByClassName('recherche')[0].value;
+        this.allRecipes.filteredRecipes(word);
     }
 
     /**
@@ -199,20 +208,22 @@ export default class Tags {
      * Add to a tag lists set
      * @function
      * @memberof Tags 
-     * @param {object} recipe - The added recipe
+     * @param {object} recipe - The added recipe (none if equal to "0")
      */
     updateTagsListSet(recipe) {
         if (recipe == "0") {
             this.clearTagsListsSets();
         } else {
             //set of ingredients, ustensils, appliance
-            if (recipe.appliance) this.appareilsListTagsSet.add(recipe.appliance);
-            if (recipe.ingredients != undefined) {
+            if (recipe.appliance) {
+                this.appareilsListTagsSet.add(recipe.appliance);
+            }
+            if (recipe.ingredients) {
                 for (let ingredient of recipe.ingredients) {
                     this.ingredientsListTagsSet.add(ingredient.ingredient);
                 }
             }
-            if (recipe.ustensils != undefined) {
+            if (recipe.ustensils) {
                 for (let ustensil of recipe.ustensils) {
                     this.ustensilesListTagsSet.add(ustensil);
                 }
@@ -232,32 +243,36 @@ export default class Tags {
         const ustensiles = document.getElementById("cb-ustensiles__listbox")
         for (let item of this.ingredientsListTagsSet) {
             if (this.initialized) {
-                document.getElementById("lb1-" + item.replace(/[^a-zA-Z]/g, "")).style.display = 'block';
+                let el = document.getElementById("lb1-" + item.replace(/[^a-zA-Z]/g, ""));
+                if (el) el.style.display = 'block';
             } else {
                 this.createLiElement(ingredients, item, "lb1-");
             }
         }
         for (let item of this.appareilsListTagsSet) {
             if (this.initialized) {
-                document.getElementById("lb2-" + item.replace(/[^a-zA-Z]/g, "")).style.display = 'block';
+                let el = document.getElementById("lb2-" + item.replace(/[^a-zA-Z]/g, ""))
+                if (el) el.style.display = 'block';
             } else {
                 this.createLiElement(appareils, item, "lb2-");
             }
         }
         for (let item of this.ustensilesListTagsSet) {
             if (this.initialized) {
-                document.getElementById("lb3-" + item.replace(/[^a-zA-Z]/g, "")).style.display = 'block';
+                let el = document.getElementById("lb3-" + item.replace(/[^a-zA-Z]/g, ""))
+                if (el) el.style.display = 'block';
             } else {
                 this.createLiElement(ustensiles, item, "lb3-");
             }
         }
-
         this.initialized = true;
     }
 
 
     /**
      * Create and add the li tag element
+     * @function
+     * @memberof Tags 
      * @param {object} container - The DOM UL element
      * @param {*} txt - The tag's text
      * @param {*} idPrefix - The tag id's prefixe
@@ -268,7 +283,28 @@ export default class Tags {
         element.setAttribute("role", "option");
         // Remove anything that is not a letter
         element.id = idPrefix + txt.replace(/[^a-zA-Z]/g, "");
+        // Set the domNode property for accessibility (keyup)
+        element.style.display = "block";
         container.appendChild(element);
     }
+
+
+
+    /**
+     * Return the selected tags
+     * @function
+     * @memberof Tags 
+     * @returns - An object containing the Sets tags
+     */
+
+    getSelectedTags() {
+        return {
+            ingredients: this.ingredientsTagsSet,
+            appareils: this.appareilsTagsSet,
+            ustensiles: this.ustensilesTagsSet
+        }
+    }
+
+
 
 }

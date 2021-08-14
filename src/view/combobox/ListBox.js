@@ -174,11 +174,18 @@ export default class ListBox {
      * @returns {object} - The previous option DOM element
      */
     getPreviousItem(currentOption) {
-        if (currentOption !== this.firstOption) {
-            const index = this.options.indexOf(currentOption);
-            return this.options[index - 1];
+        let index = this.options.indexOf(currentOption) - 1;
+        let cpt = 0;
+        while (!this.optionIsVisible(this.options[index])) {
+            cpt++;
+            index--;
+            if (index <= 0) index = this.options.length - 1;
+            // stop condition for one option
+            if (cpt == this.options.length) {
+                return this.options[this.options.indexOf(currentOption)];
+            }
         }
-        return this.lastOption;
+        return this.options[index];
     }
 
     /**
@@ -188,12 +195,34 @@ export default class ListBox {
      * @returns {object} - The next option DOM element
      */
     getNextItem(currentOption) {
-        if (currentOption !== this.lastOption) {
-            const index = this.options.indexOf(currentOption);
-            return this.options[index + 1];
+        let index = this.options.indexOf(currentOption) + 1;
+        let cpt = 0;
+        while (!this.optionIsVisible(this.options[index])) {
+            cpt++;
+            index++;
+            if (index > this.options.length - 1) index = 0;
+            // stop condition for one option
+            if (cpt == this.options.length) {
+                return this.options[this.options.indexOf(currentOption)];
+            }
         }
-        return this.firstOption;
+        return this.options[index];
     }
+
+    /**
+     * Know if the option is visible
+     * @function
+     * @memberof ListBox 
+     * @param {object} option - The option DOM element
+     * @returns {boolean} - Is the option visible (yes=true, no=false)
+     */
+    optionIsVisible(option) {
+        if (option === undefined) return false;
+        if (option.domNode.style.display == 'none') {
+            return false;
+        } else return true;
+    }
+
 
     /* MENU DISPLAY METHODS */
 

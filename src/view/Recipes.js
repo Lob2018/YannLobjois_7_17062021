@@ -13,6 +13,12 @@ export default class Recipes {
         this.ul = document.getElementsByClassName("recipe-container")[0]
     }
 
+    /**
+     * Display the recipe according to the tags
+     * @function
+     * @memberof Recipes 
+     * @param {object} recipe - The recipe to display (from the research)
+     */
     displayRecipe(recipe) {
 
         // FILTRER AVEC TAGS PRESENTS ICI
@@ -67,6 +73,13 @@ export default class Recipes {
         this.ul.appendChild(li);
     }
 
+
+
+    /**
+     * Clear the recipes UL element
+     * @function
+     * @memberof Recipes 
+     */
     clear() {
         this.ul.innerHTML = '';
     }
