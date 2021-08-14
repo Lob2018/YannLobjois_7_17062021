@@ -190,14 +190,14 @@ export default class ComboBox {
         const altKey = event.altKey;
         switch (event.keyCode) {
             case this.keyCode.RETURN:
+                // Set the selected tag
+                this.tags.setTag(this.listbox.domNode.id, this.option.textContent);
                 if ((this.listbox.hasFocus || this.isBoth) && this.option) {
                     this.setValue(this.option.textContent);
                 }
                 this.listbox.close(true);
                 flag = true;
                 this.toogleFilters();
-                // Set the selected tag
-                this.tags.setTag(this.listbox.domNode.id, this.option.textContent);
                 this.removeVisualFocusAll();
                 this.filter = '';
                 this.setValue('');
@@ -210,7 +210,7 @@ export default class ComboBox {
                     } else {
                         this.listbox.open();
                         if (!altKey) {
-                            this.setOption(this.listbox.getFirstItem(), true);
+                            this.setOption(this.listbox.getNextItem(this.option), true);
                         }
                     }
                     this.setVisualFocusListbox();
@@ -224,7 +224,7 @@ export default class ComboBox {
                     } else {
                         this.listbox.open();
                         if (!altKey) {
-                            this.setOption(this.listbox.getLastItem(), true);
+                            this.setOption(this.listbox.getPreviousItem(this.option), true);
                         }
                     }
                     this.setVisualFocusListbox();
