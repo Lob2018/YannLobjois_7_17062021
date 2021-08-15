@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: entity/Recipe.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,37 +17,35 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: entity/Recipe.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article><h1>YannLobjois_7_17062021</h1>
-<p><a href="https://lob2018.github.io/YannLobjois_7_17062021/">Lien GitHub Pages</a></p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>export default class Recipe {
+    /**
+     * Classe Recipe - The recipe object
+     * @class Recipes
+     * @param {object} recipe - The JavaScript object of recipe
+     * @returns {object} - The current Recipe instance
+     */
+    constructor(recipe) {
+        this.id = recipe.id;
+        this.name = recipe.name;
+        this.servings = recipe.servings;
+        this.ingredients = recipe.ingredients; // array                
+        this.time = recipe.time;
+        this.description = recipe.description;
+        this.appliance = recipe.appliance;
+        this.ustensils = recipe.ustensils;
+    }
+}</code></pre>
+        </article>
     </section>
-
-
 
 
 
