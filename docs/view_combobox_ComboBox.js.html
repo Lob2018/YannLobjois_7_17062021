@@ -1,4 +1,32 @@
-import ListBox from './ListBox';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: view/combobox/ComboBox.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: view/combobox/ComboBox.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import ListBox from './ListBox';
 import Tags from '../Tags';
 
 export default class ComboBox {
@@ -36,7 +64,7 @@ export default class ComboBox {
         });
         window.addEventListener('load', function() {
             const comboboxes = document.querySelectorAll('.combobox-list [role="combobox"]');
-            for (let i = 0; i < comboboxes.length; i++) {
+            for (let i = 0; i &lt; comboboxes.length; i++) {
                 const combobox = new ComboBox(comboboxes[i]);
                 combobox.init();
             }
@@ -76,7 +104,7 @@ export default class ComboBox {
         }
         // Open Button
         const button = this.domNode.nextElementSibling;
-        if (button && button.tagName === 'SPAN') {
+        if (button &amp;&amp; button.tagName === 'SPAN') {
             button.addEventListener('click', this.handleButtonClick.bind(this));
             button.addEventListener('keyup', this.handleButtonKeyUp.bind(this));
         }
@@ -89,7 +117,7 @@ export default class ComboBox {
      * @param {object} option - The active option element
      */
     setActiveDescendant(option) {
-        if (option && this.listbox.hasFocus) {
+        if (option &amp;&amp; this.listbox.hasFocus) {
             this.domNode.setAttribute('aria-activedescendant', option.domNode.id);
         } else {
             this.domNode.setAttribute('aria-activedescendant', '');
@@ -194,7 +222,7 @@ export default class ComboBox {
                 this.setValue('');
                 // Set the selected tag
                 this.tags.setTag(this.listbox.domNode.id, this.option.textContent);
-                if ((this.listbox.hasFocus || this.isBoth) && this.option) {
+                if ((this.listbox.hasFocus || this.isBoth) &amp;&amp; this.option) {
                     this.setValue(this.option.textContent);
                 }
                 this.listbox.close(true);
@@ -207,7 +235,7 @@ export default class ComboBox {
                 break;
             case this.keyCode.DOWN:
                 if (this.listbox.hasOptions()) {
-                    if (this.listbox.hasFocus || (this.isBoth && this.option)) {
+                    if (this.listbox.hasFocus || (this.isBoth &amp;&amp; this.option)) {
                         this.setOption(this.listbox.getNextItem(this.option), true);
                     } else {
                         this.listbox.open();
@@ -221,7 +249,7 @@ export default class ComboBox {
                 break;
             case this.keyCode.UP:
                 if (this.listbox.hasOptions()) {
-                    if (this.listbox.hasFocus || (this.isBoth && this.option)) {
+                    if (this.listbox.hasFocus || (this.isBoth &amp;&amp; this.option)) {
                         this.setOption(this.listbox.getPreviousItem(this.option), true);
                     } else {
                         this.listbox.open();
@@ -271,13 +299,13 @@ export default class ComboBox {
         function isPrintableCharacter(str) {
             if (str === undefined) { // remove autocomplete selection error
                 return 1;
-            } else return str.length === 1 && str.match(/\S/);
+            } else return str.length === 1 &amp;&amp; str.match(/\S/);
         }
         if (isPrintableCharacter(char)) {
             this.filter += char;
         }
         // this is for the case when a selection in the textbox has been deleted
-        if (this.domNode.value.length < this.filter.length) {
+        if (this.domNode.value.length &lt; this.filter.length) {
             this.filter = this.domNode.value;
             this.option = false;
         }
@@ -313,14 +341,14 @@ export default class ComboBox {
                     if (this.isList || this.isBoth) {
                         option = this.listbox.filterOptions(this.filter, this.option);
                         if (option) {
-                            if (this.listbox.isClosed() && this.domNode.value.length) {
+                            if (this.listbox.isClosed() &amp;&amp; this.domNode.value.length) {
                                 this.listbox.open();
                             }
                             if (option.textComparison.indexOf(this.domNode.value.toLowerCase()) === 0) {
                                 this.option = option;
                                 if (this.isBoth || this.listbox.hasFocus) {
                                     this.listbox.setCurrentOptionStyle(option);
-                                    if (this.isBoth && isPrintableCharacter(char)) {
+                                    if (this.isBoth &amp;&amp; isPrintableCharacter(char)) {
                                         this.setOption(option);
                                     }
                                 }
@@ -337,7 +365,7 @@ export default class ComboBox {
                         this.listbox.open();
                     }
                 }
-                if (this.filter != '' && this.option.textContent == undefined) {
+                if (this.filter != '' &amp;&amp; this.option.textContent == undefined) {
                     this.removeVisualFocusAll();
                     this.filter = '';
                     this.setValue('');
@@ -487,4 +515,26 @@ export default class ComboBox {
         this.domNode.focus();
         this.setVisualFocusTextbox();
     }
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AllRecipes.html">AllRecipes</a></li><li><a href="ComboBox.html">ComboBox</a></li><li><a href="ListBox.html">ListBox</a></li><li><a href="ListBoxOption.html">ListBoxOption</a></li><li><a href="Recipes.html">Recipes</a></li><li><a href="Search.html">Search</a></li><li><a href="Tags.html">Tags</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Mon Aug 16 2021 01:25:14 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

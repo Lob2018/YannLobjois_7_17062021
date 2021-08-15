@@ -20,7 +20,7 @@ export default class Search {
     /**
      * Keyup event
      * @function
-     * @memberof ComboBox 
+     * @memberof Search 
      * @param {object} event - The event of the keyup 
      */
     handleKeyup(event) {
